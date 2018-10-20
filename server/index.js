@@ -36,6 +36,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+
 db.sync()
 .then(() => {
   console.log('db is synced!');
