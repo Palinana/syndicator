@@ -6,8 +6,9 @@ async function seed () {
   console.log('db synced!')
 
   const events = await Promise.all([
-    Event.create({name: "Party", description: "Lorem ipsum dolorlum.", address: "22 str", price: 50, startTime: "2018-06-05T20:00:00.000Z", endTime: "2018-12-06T00:00:00.000Z", status: "active"  }),
-    Event.create({name: "Festival", description: "Mauris vitum s i scelerisque.", address: "45 str", price: 100, startTime: "2018-06-05T20:00:00.000Z", endTime: "2018-12-06T00:00:00.000Z", status: "active" }),
+    Event.create({name: "Party", description: "Lorem ipsum dolorlum.", address: "22 str", price: 50, currency: "USD", startTime: "2018-11-05T20:00:00.000Z", endTime: "2018-11-06T00:00:00.000Z", timeZone: "America/Chicago", status: "active"  }),
+    Event.create({name: "Festival", description: "Mauris vitum s i scelerisque.", address: "45 str", price: 100, currency: "USD", startTime: "2018-11-05T20:00:00.000Z", endTime: "2018-12-06T00:00:00.000Z", timeZone: "America/Chicago", status: "active" }),
+    Event.create({name: "Halloween 2018", description: "Mauris vitum s i scelerisque.", address: "66 str", price: 35, currency: "USD", startTime: "2018-12-05T20:00:00.000Z", endTime: "2018-12-06T00:00:00.000Z",timeZone: "America/Chicago", status: "active", posted: "true" }),
   ])
  
   console.log(`seeded successfully`);

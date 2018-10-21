@@ -17,12 +17,20 @@ const Event = db.define('event', {
     price: {
         type: Sequelize.INTEGER,
     },
+    currency: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     startTime: {
         type: Sequelize.DATE,
         allowNull: false
     },
     endTime: {
         type: Sequelize.DATE,
+        allowNull: false
+    },
+    timeZone: {
+        type: Sequelize.STRING,
         allowNull: false
     },
     status: {
@@ -35,13 +43,14 @@ const Event = db.define('event', {
     timeRemaining: {
         type: Sequelize.VIRTUAL,
         get() {
-          return this.endTime ? this.endTime - Date.now() : Infinity;
+        //   return this.endTime ? this.endTime - Date.now() : Infinity;
+          return this.endTime ? new Date(this.endTime) - Date.now() : Infinity;
         }
     },
     isActive: {
         type: Sequelize.VIRTUAL,
         get() {
-          return this.timeRemaining < 0
+          return this.timeRemaining > 0
         }
     }
 });

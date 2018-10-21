@@ -36,11 +36,12 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+// cronJob(addEvents, 5000);
 
 db.sync()
-.then(() => {
-  console.log('db is synced!');
-}).catch(console.error);
+    .then(() => {
+    console.log('db is synced!');
+    }).catch(console.error);
 
 app.listen(process.env.PORT || PORT, () => {
         console.log(`listening on PORT ${PORT}`);

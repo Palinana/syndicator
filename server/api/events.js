@@ -2,7 +2,19 @@ const router = require('express').Router();
 const Event = require('../db/models');
 
 router.get('/', function(req, res, next) {
-    Event.findAll({include: [{all: true}]})
+    Event.findAll({
+        include: [{all: true}]
+    })
+        .then(events => res.json(events))
+        .catch(next);
+});
+
+router.get('/unposted', function(req, res, next) {
+    Event.findAll({
+        where: { 
+            posted: 'false' 
+        }
+    })
         .then(events => res.json(events))
         .catch(next);
 });
