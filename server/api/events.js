@@ -25,9 +25,10 @@ router.post('/', function (req, res, next) {
        description: req.body.description,
        address: req.body.address,
        price: req.body.price,
+       currency: req.body.currency,
        startTime: req.body.startTime,
        endTime: req.body.endTime,
-       status: req.body.status,
+       timeZone: req.body.timeZone,
     })
       .then(event => res.status(201).json(event))  
       .catch(next);

@@ -33,9 +33,6 @@ const Event = db.define('event', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    status: {
-        type: Sequelize.ENUM ('active', 'closed')
-    },
     posted: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
@@ -43,7 +40,6 @@ const Event = db.define('event', {
     timeRemaining: {
         type: Sequelize.VIRTUAL,
         get() {
-        //   return this.endTime ? this.endTime - Date.now() : Infinity;
           return this.endTime ? new Date(this.endTime) - Date.now() : Infinity;
         }
     },
