@@ -26,7 +26,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
-    "date-fns": "^1.29.0",
+    "node-eventbrite": "0.0.19",
     "express": "^4.16.3",
     "history": "^4.7.2",
     "morgan": "^1.9.0",
