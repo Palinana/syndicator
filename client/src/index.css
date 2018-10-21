@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.text-secondary {
+  color: #48BD97 !important;
+}
+
+.btn-submit {
+  background: #48BD97 !important;
+  border: none;
+}
+
+.btn-link {
+  color: black !important;
+}
