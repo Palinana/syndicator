@@ -1,0 +1,5 @@
+const PERSONAL_TOKEN = 'I5WCQRGSS2Q5UB46D4W6';
+
+module.exports = {
+    PERSONAL_TOKEN
+}
