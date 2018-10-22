@@ -6,18 +6,17 @@ This application is built from create-react-app, PostgreSQL, Express.js and Boot
 - Users are admins who already logged in
 - When new event is added by the admin it automatically posted to websites
 
-Client Side (React):
+### Client Side (React):
 - The main page is the admin dashboard, running in port: 3000
 - Admin is able to see all events 
 - Admin is able to add a new event and later see it on the dashbord
 - The form has data validations and doesn't allow to submit without the context
 
-Server Side (Express):
+### Server Side (Express):
 - Server is running in port: 4000
 - Everything added is displayed in http://localhost:4000/api/events
 - Can see all unposted events on http://localhost:4000/api/events/unposted
 - Cron job is set to 15 sec(for test purposes) interval and get the events from the link above to post them
-- Due to time I only have managed to post onto Eventbrite
 
 ## Installation:
 - Have postgres installed (https://postgresapp.com/)
