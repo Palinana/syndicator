@@ -11,10 +11,12 @@ class CreateEventForm extends Component {
             description: '',
             address: '',
             price: '',
-            currency: '',
+            capacity: '',
+            currency: 'CAD',
             startTime: '',
             endTime: '',
-            timeZone: ''
+            timeZone: 'America/Chicago',
+            invite: 'true'
         }
     }
 
@@ -35,10 +37,12 @@ class CreateEventForm extends Component {
             description: '',
             address: '',
             price: '',
+            capacity: '',
             currency: '',
             startTime: '',
             endTime: '',
-            timeZone: ''
+            timeZone: '',
+            invite: ''
         });
 
         this.props.history.push('/');
@@ -46,6 +50,8 @@ class CreateEventForm extends Component {
 
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
+        console.log("Event data ", this.state)
+
     }
     
     render() {
@@ -110,6 +116,18 @@ class CreateEventForm extends Component {
                         </div>
 
                         <div className="form-group">
+                            <label htmlFor="capacity">Capacity</label>
+                            <input 
+                                type="text" 
+                                className="form-control"
+                                name="capacity"
+                                required
+                                onChange={this.onChange}
+                                value={this.state.capacity}
+                            />
+                        </div>
+
+                        <div className="form-group">
                             <label htmlFor="currency">Currency</label>
                             <select className="form-control" id="exampleFormControlSelect1" 
                                 onChange={this.onChange} value={this.state.currency} name="currency" required
@@ -154,6 +172,16 @@ class CreateEventForm extends Component {
                                 <option value="America/Phoenix">America/Phoenix</option>
                                 <option value="Pacific/Honolulu">Pacific/Honolulu</option>
 
+                            </select>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="invite">Allow Invitaiton</label>
+                            <select className="form-control" id="exampleFormControlSelect1" 
+                                onChange={this.onChange} value={this.state.invite} name="invite" required
+                            >
+                                <option value="true">Allow</option>
+                                <option value="false">Do no allow</option>
                             </select>
                         </div>
 

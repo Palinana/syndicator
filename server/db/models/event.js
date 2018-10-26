@@ -17,6 +17,9 @@ const Event = db.define('event', {
     price: {
         type: Sequelize.INTEGER,
     },
+    capacity: {
+        type: Sequelize.INTEGER,
+    },
     currency: {
         type: Sequelize.STRING,
         allowNull: false
@@ -36,6 +39,10 @@ const Event = db.define('event', {
     posted: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
+    },
+    invite: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
     },
     timeRemaining: {
         type: Sequelize.VIRTUAL,
