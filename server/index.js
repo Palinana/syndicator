@@ -24,19 +24,17 @@ if (process.env.NODE_ENV === 'production') {
   
 } else {
   app.use(express.static(path.join(__dirname, '../public')));
-
+  // For all GET requests that aren't to an API route, we will send the index.html!
   app.use('*', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../client/public/index.html'));
   });
-
+  // error handling
   app.use((err, req, res, next) => {
     console.error(err);
     console.error(err.stack);
     res.status(err.status || 500).send(err.message || 'Internal server error!');
   });
 }
-
-// cronJob(addEvents, 5000);
 
 db.sync()
     .then(() => {
@@ -46,5 +44,7 @@ db.sync()
 app.listen(process.env.PORT || PORT, () => {
         console.log(`listening on PORT ${PORT}`);
 });
+
+cronJob(addEvents, 5000);
 
 module.exports = app;

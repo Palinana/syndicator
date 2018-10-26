@@ -25,10 +25,13 @@ router.post('/', function (req, res, next) {
        description: req.body.description,
        address: req.body.address,
        price: req.body.price,
+       capacity: req.body.capacity,
        currency: req.body.currency,
        startTime: req.body.startTime,
        endTime: req.body.endTime,
        timeZone: req.body.timeZone,
+       invite: req.body.invite,
+       value: req.body.value,
     })
       .then(event => res.status(201).json(event))  
       .catch(next);
