@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// cronJob(addEvents, 5000);
+cronJob(addEvents, 5000);
 
 db.sync()
     .then(() => {

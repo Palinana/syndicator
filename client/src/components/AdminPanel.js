@@ -20,6 +20,10 @@ class AdminPanel extends Component {
     }
 
     render() {
+        const events = this.state.events.sort((a,b) => {
+            return a.id - b.id
+        })
+        console.log("Sorted Events ", events)
         return (
         <div className="container">
             <div className="row">
@@ -40,7 +44,7 @@ class AdminPanel extends Component {
                         
                     </div>
                 <hr/>
-                {this.state.events.map(event => {
+                {events.map(event => {    
                     return (
                         <ul className="list-group" key={event.id}>
                             <li className="list-group-item">{event.id} <span className="text-secondary"> {event.name}</span></li>
