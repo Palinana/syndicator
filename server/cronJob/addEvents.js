@@ -11,7 +11,6 @@ const addEvents = () => {
             }
             else {
                 events.data.map(event => {
-                    // console.log('EVENT ', event)
                     axios.post(`https://www.eventbriteapi.com/v3/events/?token=${PERSONAL_TOKEN}`, {
                             "event": {
                                 "name": {
